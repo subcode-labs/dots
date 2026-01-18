@@ -33,5 +33,6 @@ func init() {
 	rootCmd.AddCommand(applyCmd)
 	rootCmd.AddCommand(listCmd)
 	rootCmd.AddCommand(removeCmd)
+	rootCmd.AddCommand(diffCmd)
 }
 
