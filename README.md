@@ -22,6 +22,12 @@ Most dotfile managers are powerful, but they often feel like a configuration fra
 
 ## Install
 
+### Curl
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/subcode-labs/dots/main/install.sh | bash
+```
+
 ### Go install
 
 ```bash
@@ -69,6 +75,32 @@ conflict  /home/jonty/.zshrc (not a symlink)
 $ dots apply
 Linked /home/jonty/.bashrc -> /home/jonty/.dots/.bashrc
 Linked /home/jonty/.vimrc -> /home/jonty/.dots/.vimrc
+```
+
+### List tracked files
+
+```bash
+$ dots list
+/home/jonty/.bashrc
+/home/jonty/.vimrc
+```
+
+### Remove a dotfile
+
+```bash
+$ dots remove ~/.bashrc
+Removed /home/jonty/.bashrc from dots
+```
+
+### Show diffs
+
+```bash
+$ dots diff ~/.bashrc
+--- /home/jonty/.bashrc
++++ /home/jonty/.dots/.bashrc
+@@ -1,2 +1,2 @@
+-export PATH=$HOME/bin:$PATH
++export PATH=$HOME/.local/bin:$PATH
 ```
 
 ## How it works
