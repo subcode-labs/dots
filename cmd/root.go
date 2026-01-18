@@ -32,5 +32,6 @@ func init() {
 	rootCmd.AddCommand(statusCmd)
 	rootCmd.AddCommand(applyCmd)
 	rootCmd.AddCommand(listCmd)
+	rootCmd.AddCommand(removeCmd)
 }
 

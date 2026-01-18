@@ -89,3 +89,13 @@ func UpsertEntry(manifest *Manifest, entry FileEntry) {
 	}
 	manifest.Files = append(manifest.Files, entry)
 }
+
+func RemoveEntry(manifest *Manifest, target string) bool {
+	for i, entry := range manifest.Files {
+		if entry.Target == target {
+			manifest.Files = append(manifest.Files[:i], manifest.Files[i+1:]...)
+			return true
+		}
+	}
+	return false
+}

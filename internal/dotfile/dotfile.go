@@ -70,10 +70,14 @@ func CopyIntoDots(home, sourcePath string) (string, error) {
 	}
 	base := filepath.Base(sourcePath)
 	destination := filepath.Join(config.DotsDir(home), base)
-	if err := copyFile(sourcePath, destination); err != nil {
+	if err := CopyFile(sourcePath, destination); err != nil {
 		return "", err
 	}
 	return destination, nil
+}
+
+func CopyFile(src, dst string) error {
+	return copyFile(src, dst)
 }
 
 func copyFile(src, dst string) error {
