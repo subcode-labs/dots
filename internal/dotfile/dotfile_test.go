@@ -447,7 +447,7 @@ func TestRelativePath(t *testing.T) {
 	}{
 		{"/home/user", "/home/user/.bashrc", "~/.bashrc"},
 		{"/home/user", "/home/user/.config/nvim/init.vim", "~/.config/nvim/init.vim"},
-		{"/home/user", "/etc/hosts", "/etc/hosts"}, // outside home, returns as-is
+		{"/home/user", "/etc/hosts", "../etc/hosts"}, // outside home, gets relative path with ..
 	}
 
 	for _, tt := range tests {
